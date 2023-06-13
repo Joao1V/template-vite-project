@@ -4,7 +4,7 @@ import Footer from "./Footer.jsx";
 const DefaultLayout = ({children}) => {
 
     return (
-        <div>
+        <div className={'d-flex flex-column h-100'}>
             <Header/>
             <main className={'h-100'}>
                 {children}

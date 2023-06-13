@@ -1,9 +1,9 @@
 const Footer = () => {
 
     return (
-        <div>
+        <footer className={'border-top'}>
             Footer
-        </div>
+        </footer>
     )
 }
 

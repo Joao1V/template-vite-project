@@ -1,9 +1,9 @@
 const Header = () => {
 
     return (
-        <div>
+        <header className={'border-bottom'}>
             Header
-        </div>
+        </header>
     )
 }
 

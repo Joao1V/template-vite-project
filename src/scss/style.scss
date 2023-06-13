@@ -8,6 +8,18 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+#root {
+  height: 100vh;
+}
+
+header {
+  min-height: 80px;
+  max-height: 80px;
+}
+
+footer {
+  min-height: 100px;
+}
 
 body {
   margin: 0;
