@@ -1,34 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {HelmetProvider} from "react-helmet-async";
+import {
+    BrowserRouter as Router, Route,
+    Switch,
 
-function App() {
-  const [count, setCount] = useState(0)
+} from "react-router-dom";
+import DefaultLayout from "./Default/DefaultLayout.jsx";
+import HomePage from "./pages/HomePage/HomePage.jsx";
+import Company from "./pages/Company.jsx";
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 className='teste'>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+const App = () => {
+    const helmetContext = {};
+    return (
+    <HelmetProvider context={helmetContext}>
+        <Router>
+            <Switch>
+                <DefaultLayout>
+                    <Route exact path={'/'} component={HomePage}/>
+                    <Route exact path={'/empresa'} component={Company}/>
+                </DefaultLayout>
+            </Switch>
+        </Router>
+    </HelmetProvider>
   )
 }
 
